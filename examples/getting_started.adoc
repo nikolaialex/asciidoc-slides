@@ -1,0 +1,108 @@
+= Getting started
+:toc:
+:docinfodir: dist/docinfo
+:docinfo: shared
+:imagesdir: images
+:stylesheet!:
+:linkcss:
+:nofooter:
+
+== A slide
+
+== A slide with an background image
+[.background]
+image::forest.jpg[]
+
+[.notes]
+Photo by Lukasz Szmigiel on Unsplash
+
+== Awesome bullet points
+* Milk
+* Eggs
+* Sugar
+* Bread
+* Cheese
+
+== Put all your knowledge on one slide
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.
+
+At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+
+Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.
+
+== Slides are HTML
+
+So you can do whatever you want.
+
+<p class="codepen" data-height="591" data-theme-id="default" data-default-tab="result" data-user="ivorjetski" data-slug-hash="ExaKmjw" style="height: 591px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure CSS Playing Card No.1 - King of Hearts">
+  <span>See the Pen <a href="https://codepen.io/ivorjetski/pen/ExaKmjw">
+  Pure CSS Playing Card No.1 - King of Hearts</a> by Ben Evans (<a href="https://codepen.io/ivorjetski">@ivorjetski</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+
+== Themes
+Just link your css at the end and override or add styles. Do not delete the stylezzz.css. It provides the necessary styles for the slide deck.
+
+
+== Asciidoc
+The slides are generated from Asciidoc.
+
+== Speaker notes
+Use **N** to switch into presentation mode.
+
+[.notes]
+****
+```Asciidoc
+[.notes]
+You help text
+```
+****
+
+== Some image
+image::forest.jpg[height=400px]
+
+== An image with some more text, that might get wrapped.
+
+== A quote
+
+[quote, Benjamin Franklin]
+Either write something worth reading or do something worth writing.
+
+== Some code
+
+```java
+Foo foo = new Foo();
+Bar bar = foo.bar();
+System.out.println(bar);
+```
+
+== Tabular Tables
+
+|===
+| Column A | Column B
+| Lorem    | Ipsum
+| dolor    | sit
+|===
+
+== Fantastic printing
+Just print this page. The ''print.css'' should take care of everything.
+
+== Take a Moment
+Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+
+== Fullscreen
+Press **F** to enter or leave fullscreen mode.
+
+== Help
+Pressing **H** displays the help dialog with all shortcut options.

@@ -1,0 +1,21 @@
+@media print {
+  section {
+    position: relative;
+  }
+
+  section {
+    page-break-before: always;
+  }
+
+  a:after {
+    content: "( " attr(href) ") ";
+  }
+
+  @page {
+    margin: 0;
+  }
+
+  #pause, #help, header {
+    display: none;
+  }
+}
