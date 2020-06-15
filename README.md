@@ -13,7 +13,7 @@ Hit the h key to show the shortcuts.
 
 ## HTML Generation
 ```bash
-$ asciidoctor -r ./dist/lib/asciidoc_slides_converter.rb getting_started.adoc
+$ asciidoctor -r ./dist/lib/asciidoc_slides_converter.rb -a stylesdir=dist/css getting_started.adoc
 ```
 ## Presentation Mode
 
