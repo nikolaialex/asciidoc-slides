@@ -24,6 +24,7 @@ Hit the **h** key to show the shortcuts.
 * asciidoc_slides_converter
 
 ## Layer
+* 3: Pause screen
 * 2: Footer
 * 1: Current slide
 * 0: Default level for slides

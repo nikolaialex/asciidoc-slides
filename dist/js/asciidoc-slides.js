@@ -141,7 +141,9 @@ function toggleFullScreen() {
 }
 
 function showFirstSlide() {
-  window.location.hash = getFirstSlide().id;
+  if(getCurrentSlide() == null) {
+    window.location.hash = getFirstSlide().id;
+  }
 }
 
 function initiateChannelCommunication() {
