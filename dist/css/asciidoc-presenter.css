@@ -1,45 +1,234 @@
+section.sect1 {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  color: black;
+  background-color: white;
+  overflow: scroll;
+  padding: 1rem;
+}
+
+section.sect1:target {
+  z-index: 1;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+figure {
+  margin: 0;
+}
+
+header {
+  display: none;
+}
+
+nav {
+  position: fixed;
+  background-color: rgb(235, 235, 235);
+  padding: 1rem;
+  overflow: scroll;
+  top: 0;
+  bottom: 0;
+}
+
 /*
 Presentation mode
 */
 body.presenter section.sect1:target div.notes {
-    visibility: visible;
-    height: calc(50vh - 3rem);
-    width: calc(50vw - 2rem);
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    border: 1px solid darkgray;
-    margin-bottom: 3rem;
-    margin-left: 1rem;
-    box-shadow: 2px 2px 5px #bdc1c7;
-    background-color: #e8e8e8;
-    box-sizing: border-box;
-    padding: 1rem;
-    font-size: 1rem;
-    overflow: scroll;
-  }
-  
-  div.notes {
-    visibility: hidden;
-  }
-  
+  visibility: visible;
+  display: block;
+  height: calc(50vh - 3rem);
+  width: calc(50vw - 2rem);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  border: 1px solid darkgray;
+  margin-bottom: 3rem;
+  margin-left: 1rem;
+  box-shadow: 2px 2px 5px #bdc1c7;
+  background-color: #e8e8e8;
+  box-sizing: border-box;
+  padding: 1rem;
+  font-size: 1.5rem;
+  overflow: scroll;
+}
+
+div.notes {
+  xvisibility: hidden;
+  display: none;
+}
+
 .presenter section.sect1 {
-    visibility: collapse;
-    border: 1px solid darkgray;
-    margin: 1rem;
-    box-shadow: 2px 2px 5px#bdc1c7;
-    position: fixed;
-    transform: scale(.485);
-  }
-  
-  .presenter section:target {
-    visibility: visible;
-    transform-origin: top left;
-  }
-  
-  .presenter section:target + section {
-    visibility: visible;
-    z-index: 1;
-    right: 0;
-    transform-origin: top right;
-  }
+  visibility: hidden;
+  border: 1px solid darkgray;
+  margin: 1rem;
+  height: calc(50vh - 2rem);
+  width: calc(50vw - 2rem);
+  box-shadow: 2px 2px 5px#bdc1c7;
+  top: 0;
+  position: fixed;
+}
+
+.presenter section:target {
+  visibility: visible;
+  left: 0;
+}
+
+.presenter section:target + section {
+  visibility: visible;
+  z-index: 1;
+  right: 0;
+}
+
+.presenter {
+  background-color: #dadde0;
+}
+
+footer {
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  text-align: center;
+  color: black;
+  background-color: white;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+}
+
+#pause {
+  background-color: black;
+  color: rgb(99, 99, 99);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visible {
+  cvisibility: visible;
+  display: block;
+  transition: all 300ms ease-in;
+  opacity: 1;
+  z-index: 10;
+}
+
+.hidden {
+  cvisibility: hidden;
+  display: none;
+  transition: all 300ms ease-in;
+  opacity: 0;
+  z-index: -1;
+}
+
+.side-menu {
+  color: white;
+  padding: 4rem;
+  position: fixed;
+  background-color: rgb(3, 125, 166);
+  overflow: scroll;
+  top: 0;
+  bottom: 0;
+  box-shadow: 2px 0 5px -2px #34393b;
+}
+
+.side-menu a:visited {
+  color: white;
+}
+
+.side-menu a {
+  text-decoration: none;
+}
+
+.side-menu a:hover {
+  text-decoration: underline;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.help dl {
+  font-size: 1rem;
+}
+
+.help dd {
+  margin-bottom: 2rem;
+  margin-left: 0;
+  text-align: right;
+}
+
+.help dt {
+  border-bottom: 1px solid #94bed1;
+}
+
+section.sectionbody {
+  padding: 2rem;
+  margin: 0;
+  xbackground-color: rgba(255, 255, 255, 0.4);
+}
+
+section.sectionbody:blank {
+  visibility: hidden;
+}
+
+.right {
+  float: right;
+}
+
+.imageblock {
+  display: inline-block;
+}
+
+section.notitle h2 {
+  display: none;
+}
+
+section.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.background img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  height: 100vh;
+  z-index: -1;
+}
+
+section.horizontal section.sectionbody {
+  display: flex;
+}
+
+section.horizontal section.sectionbody * {
+  margin-right: 1rem;
+}
+
+.toc ul {
+  font-size: 1rem;
+}
+
+.toc a {
+  color: white;
+}
+
+#footnotes {
+  display: none;
+}
