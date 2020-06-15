@@ -1,4 +1,7 @@
-= Getting started
+= Asciidoc Slides: Getting started
+:author: Nikolai Alex
+:revnumber: 0.1.0
+:revdate: 2020-06-01
 :toc:
 :docinfodir: dist/docinfo
 :docinfo: shared
@@ -6,11 +9,35 @@
 :stylesheet!:
 :linkcss:
 :nofooter:
+:source-highlighter: rouge
+
+== Getting started
+I was looking for an easy way to create HTML slides from Asciidoc. Since I was not happy with RevealJS, I came up with this simple framework.
+
+== Features
+* Focus on the content using Asciidoc.
+* Use web standard to create a simple and lightweight implementation.
+* Give user full control over stylings.
 
 == A slide
+A slide is simply a level 2 section in Asciidoc.
 
-== A slide with an background image
+[source,asciidoc]
+----
+== Your slide title
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+erat, sed diam voluptua.
+----
+
+[.notes]
+****
+A slide is simply a level 2 section.
+****
+
+== A slide with a background image
 [.background]
+[link=https://unsplash.com/photos/jFCViYFYcus]
 image::forest.jpg[]
 
 [.notes]
@@ -43,36 +70,65 @@ Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
 
 So you can do whatever you want.
 
-<p class="codepen" data-height="591" data-theme-id="default" data-default-tab="result" data-user="ivorjetski" data-slug-hash="ExaKmjw" style="height: 591px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Pure CSS Playing Card No.1 - King of Hearts">
-  <span>See the Pen <a href="https://codepen.io/ivorjetski/pen/ExaKmjw">
-  Pure CSS Playing Card No.1 - King of Hearts</a> by Ben Evans (<a href="https://codepen.io/ivorjetski">@ivorjetski</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-
+++++
+<iframe height="451" style="width: 100%;" scrolling="no" title="Pure CSS Playing Card No.1 - King of Hearts" src="https://codepen.io/ivorjetski/embed/ExaKmjw?height=451&theme-id=light&default-tab=result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/ivorjetski/pen/ExaKmjw'>Pure CSS Playing Card No.1 - King of Hearts</a> by Ben Evans
+  (<a href='https://codepen.io/ivorjetski'>@ivorjetski</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+++++
 
 == Themes
-Just link your css at the end and override or add styles. Do not delete the stylezzz.css. It provides the necessary styles for the slide deck.
-
+Just link your css at the end and override or add styles. Modify the file ``dist/docinfo/docinfo-footer.html`` to add your custom css or just edit the ``dist/css/theme-simple.css``
 
 == Asciidoc
-The slides are generated from Asciidoc.
+The slides are generated from Asciidoc. Unfourtunalty, I had to modify the HTML output. For that you have to require a ruby class.
+
+[source,shell]
+----
+$ asciidoctor -r ./dist/lib/asciidoc_slides_converter.rb getting_started.adoc
+----
 
 == Speaker notes
-Use **N** to switch into presentation mode.
+Use **N** to switch into presentation mode. You can add notes using the following code.
+
+[source,asciidoc]
+----
+[.notes]
+* Your help text.
+* You can use all Asciidoc features for writing notes.
+----
 
 [.notes]
 ****
-```Asciidoc
+These are your notes. Never forget what you want to say.
+
+[source,asciidoc]
+----
 [.notes]
-You help text
-```
+* Your help text.
+* You can use all Asciidoc features for writing notes.
+----
 ****
 
-== Some image
-image::forest.jpg[height=400px]
+== Some images
+You can also use inline images.
 
-== An image with some more text, that might get wrapped.
+image:forest.jpg[height=400px]
+image:forest.jpg[height=400px]
+
+[.notes]
+****
+Photo by Sebastian Unrau on Unsplash
+
+[source,asciidoc]
+----
+== Some images
+You can also use inline images.
+
+image:forest.jpg[height=400px]
+image:forest.jpg[height=400px]
+----
+****
 
 == A quote
 
@@ -81,14 +137,16 @@ Either write something worth reading or do something worth writing.
 
 == Some code
 
-```java
+[source,java]
+----
 Foo foo = new Foo();
 Bar bar = foo.bar();
 System.out.println(bar);
-```
+----
 
 == Tabular Tables
 
+[options="header"]
 |===
 | Column A | Column B
 | Lorem    | Ipsum
@@ -99,7 +157,7 @@ System.out.println(bar);
 Just print this page. The ''print.css'' should take care of everything.
 
 == Take a Moment
-Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+Press **B** or **.** on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
 
 == Fullscreen
 Press **F** to enter or leave fullscreen mode.

@@ -1,0 +1,45 @@
+/*
+Presentation mode
+*/
+body.presenter section.sect1:target div.notes {
+    visibility: visible;
+    height: calc(50vh - 3rem);
+    width: calc(50vw - 2rem);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    border: 1px solid darkgray;
+    margin-bottom: 3rem;
+    margin-left: 1rem;
+    box-shadow: 2px 2px 5px #bdc1c7;
+    background-color: #e8e8e8;
+    box-sizing: border-box;
+    padding: 1rem;
+    font-size: 1rem;
+    overflow: scroll;
+  }
+  
+  div.notes {
+    visibility: hidden;
+  }
+  
+.presenter section.sect1 {
+    visibility: collapse;
+    border: 1px solid darkgray;
+    margin: 1rem;
+    box-shadow: 2px 2px 5px#bdc1c7;
+    position: fixed;
+    transform: scale(.485);
+  }
+  
+  .presenter section:target {
+    visibility: visible;
+    transform-origin: top left;
+  }
+  
+  .presenter section:target + section {
+    visibility: visible;
+    z-index: 1;
+    right: 0;
+    transform-origin: top right;
+  }

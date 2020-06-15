@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  background-color: #dadde0;
+  box-sizing: border-box;
+}
+
+section.sect1 {
+  background-color: white;
+  box-sizing: border-box;
+  color: black;
+  height: 100vh;
+  overflow: scroll;
+  padding: 1rem;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+section:target {
+  z-index: 1
+}
+
+footer {
+  z-index: 2;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  color: black;
+  background-color: white;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+}
+
+#pause {
+  background-color: black;
+  color: rgb(99, 99, 99);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+dd {
+  margin-bottom: 2rem;
+  margin-left: 0;
+  text-align: right;
+}
+
+dt {
+  border-bottom: 1px solid #94bed1;
+}
+
+section.sectionbody {
+  padding: 0 1rem 0 1rem;
+  margin: 0;
+}
+
+.right {
+  float: right;
+}
+
+.imageblock {
+  display: inline-block;
+}
+
+section.notitle h2 {
+  display: none;
+}
+
+section.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.background img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  height: 100vh;
+  z-index: -1;
+}
+
+#toctitle {
+  font-weight: bold;
+}
+
+#header .details {
+  margin-bottom: 1rem;
+}
+
+.side-menu {
+  color: white;
+  padding: 4rem;
+  position: fixed;
+  background-color: rgb(3, 125, 166);
+  overflow: scroll;
+  top: 0;
+  bottom: 0;
+  box-shadow: 2px 0 5px -2px #34393b;
+  font-size: 1rem;
+}
+
+.side-menu a:visited {
+  color: white;
+}
+
+.side-menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.side-menu a:hover {
+  text-decoration: underline;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.visible {
+  visibility: visible;
+  transition: all 200ms ease-in;
+  opacity: 1;
+  z-index: 10;
+}
+
+.hidden {
+  visibility: collapse;
+  transition: all 200ms ease-in;
+  opacity: 0;
+  z-index: -1;
+}

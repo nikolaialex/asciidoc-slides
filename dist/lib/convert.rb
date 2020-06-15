@@ -1,6 +1,3 @@
-class SlidezzzConverter < (Asciidoctor::Converter.for 'html5')
-  register_for 'html5'
-
   def convert_section node
     doc_attrs = node.document.attributes
     level = node.level
@@ -21,14 +18,6 @@ class SlidezzzConverter < (Asciidoctor::Converter.for 'html5')
     else
       title = node.title
     end
-
-		data_attributes = ""
-		 node.attributes.each do |k,v|
-			if k.to_s.start_with? "data-"
-				data_attributes += "#{k}=\"#{v}\" "
-			end
-		end
-
     if node.id
       id_attr = %( id="#{id = node.id}")
       if doc_attrs['sectlinks']
@@ -46,15 +35,14 @@ class SlidezzzConverter < (Asciidoctor::Converter.for 'html5')
       id_attr = ''
     end
     if level == 0
-      %(<h1 class="sect0#{(role = node.role) ? " #{role}" : ''}">#{title}</h1>
-      #{node.content})
+      %(<h1#{id_attr} class="sect0#{(role = node.role) ? " #{role}" : ''}">#{title}</h1>
+#{node.content})
     else
-      %(<section#{id_attr} class="sect#{level}#{(role = node.role) ? " #{role}" : ''}" #{data_attributes}>
-<h#{level + 1}>#{title}</h#{level + 1}>
-      #{level == 1 ? %[<section class="sectionbody">
-      #{node.content}
-</section>] : node.content}
-</section>)
-      end
+      %(<div class="sect#{level}#{(role = node.role) ? " #{role}" : ''}">
+<h#{level + 1}#{id_attr}>#{title}</h#{level + 1}>
+#{level == 1 ? %[<div class="sectionbody">
+#{node.content}
+</div>] : node.content}
+</div>)
+    end
   end
-end

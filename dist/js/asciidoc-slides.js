@@ -1,23 +1,33 @@
 "use strict";
 document.addEventListener(
   "DOMContentLoaded",
-  function() {
+  function () {
     var bc = new BroadcastChannel("slide_navigation");
 
-    window.onhashchange = function(e) {
+    document.querySelectorAll(".toc a").forEach(function (a) {
+      a.addEventListener(
+        "click",
+        function (e) {
+          toggleElement("#header");
+        },
+        false
+      );
+    });
+
+    window.onhashchange = function (e) {
       bc.postMessage({
-        newURL: e.newURL
+        newURL: e.newURL,
       });
     };
 
-    bc.onmessage = function(e) {
+    bc.onmessage = function (e) {
       window.location = e.data.newURL;
     };
 
     var sectionsWithBackground = document.querySelectorAll(
       "section[data-background-image]"
     );
-    sectionsWithBackground.forEach(function(e) {
+    sectionsWithBackground.forEach(function (e) {
       var url = e.dataset.backgroundImage;
       e.style.backgroundImage = "url(" + url + ")";
       e.style.backgroundSize = "cover";
@@ -143,7 +153,7 @@ document.addEventListener(
 
 function toggleFullScreen() {
   if (!document.fullscreenEnabled) {
-    alert("Fullscreen modus not available.")
+    alert("Fullscreen modus not available.");
     return;
   }
 

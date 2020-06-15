@@ -1,32 +1,31 @@
 # Asciidoc-Slides
-Create HTML slides with Asciidoc. You can write your sl
+Create HTML slides with Asciidoc.
 
 ## Important files
 * docinfo.html
 * docinfo-footer.html
 * asciidoc_slides_converter
 
-## Shortcuts 
+## Shortcuts
+Hit the h key to show the shortcuts.
 
 ## Prerequisits
 
 ## HTML Generation
 ```bash
-$ asciidoctor -r .lib/asciidoc_slides_converter.rb slides.adoc
+$ asciidoctor -r ./dist/lib/asciidoc_slides_converter.rb getting_started.adoc
 ```
 ## Presentation Mode
 
-## Asciidoc Configuration
-
-```Asciidoc
-= Your Title
-:toc:
-:docinfodir: docinfo
-:docinfo: shared
-:imagesdir: images
-:stylesheet!:
-:linkcss:
-:nofooter:
-```
-
 ## Features
+
+
+## Layer
+
+* 2: Footer
+* 1: Current slide
+* 0: Default level for slides
+
+## Architecture decision
+* Minimal JS
+* Core functionality with HTML and CSS.
