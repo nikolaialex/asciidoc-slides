@@ -4,12 +4,13 @@
 :revdate: 2020-06-01
 :toc:
 :docinfodir: dist/docinfo
-:docinfo: shared
+:stylesdir: dist/css
 :imagesdir: images
+:docinfo: shared
+:source-highlighter: rouge
 :stylesheet!:
 :linkcss:
 :nofooter:
-:source-highlighter: rouge
 
 == Getting started
 I was looking for an easy way to create HTML slides from Asciidoc. Since I was not happy with RevealJS, I came up with this simple framework.
