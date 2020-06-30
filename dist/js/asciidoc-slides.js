@@ -147,13 +147,17 @@ function showFirstSlide() {
 }
 
 function initiateChannelCommunication() {
-  var bc = new BroadcastChannel("slide_navigation");
-  bc.onmessage = function (e) {
-    window.location = e.data.newURL;
-  };
-  window.onhashchange = function (e) {
-    bc.postMessage({
-      newURL: e.newURL,
-    });
-  };
+  try {
+    var bc = new BroadcastChannel("slide_navigation");
+    bc.onmessage = function (e) {
+      window.location = e.data.newURL;
+    };
+    window.onhashchange = function (e) {
+      bc.postMessage({
+        newURL: e.newURL,
+      });
+    };
+  } catch (e) {
+    console.log("Could not initiate broadcast channel.");
+  }
 }
